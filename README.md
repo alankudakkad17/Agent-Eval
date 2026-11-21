@@ -117,7 +117,6 @@ one at a time and the Groq client retries on rate limits, so a full run takes se
 
 | Variable | Default | Meaning |
 |----------|---------|---------|
-| `GROQ_API_KEY` | — | Required |
 | `GROQ_AGENT_MODEL` | `openai/gpt-oss-120b` | Model the agent uses (needs tool calling) |
 | `GROQ_JUDGE_MODEL` | `qwen/qwen3.8-27b` | Model DeepEval uses as judge (separate rate-limit quota from the agent) |
 | `AGENT_TODAY` | real date (evals: `2026-10-20`) | Pins `get_today_date` |
