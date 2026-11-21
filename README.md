@@ -123,9 +123,4 @@ one at a time and the Groq client retries on rate limits, so a full run takes se
 
 ## Notes and limitations
 
-- Groq's free model list changes; `llama-3.3-70b-versatile` is no longer available. If a
-  model disappears, set `GROQ_AGENT_MODEL` / `GROQ_JUDGE_MODEL` to one listed at
-  https://console.groq.com/docs/models.
-- `gpt-oss` models call the reply tool in lowercase, which is why it is named `answer`.
 - The LLM judge is not deterministic; scores can move a little between runs.
-- `issue_refund_ticket` is a stub, and the purchase data is mock data.
