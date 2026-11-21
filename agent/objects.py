@@ -8,3 +8,11 @@ class Answer(BaseModel):
 
 class PurchaseItem(BaseModel):
     name: str = Field(description="name of the item puchased")
+
+
+class answer(Answer):  # noqa: N801 - lowercase on purpose
+    """Final reply to the customer. Call this tool to finish.
+
+    The class name is the tool name the agent sees. gpt-oss models always call
+    it in lowercase, and Groq rejects calls to tool names that don't exist.
+    """

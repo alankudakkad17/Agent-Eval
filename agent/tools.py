@@ -1,8 +1,9 @@
 from langchain.tools import tool
-from data import users_data
+from .data import users_data
 from dotenv import load_dotenv
 import logging
-from objects import PurchaseItem
+from .objects import PurchaseItem
+import os
 from datetime import date
 
 load_dotenv()
@@ -52,13 +53,6 @@ def get_today_date() -> str:
     """Return today's date in YYYY-MM-DD format
     This tool takes no arguments
     only use if a user exist and an item is present for refund"""
-    logging.info(f"using the date tool")
-    return date.today().isoformat()
-
-# print(get_user_purchase_history.invoke("user123"))
-#book = PurchaseItem(name="book")
-#pen = PurchaseItem(name="pen")
-#print(calculate_right_refund.invoke({"user":"user123",
-#                                     "items":[book,pen]}))
-#print(issue_refund_ticket.invoke({"user":"user123",  "refund_amount":30}))
-#print(get_today_date.invoke("user123"))
+    logging.info("using the date tool")
+    # AGENT_TODAY pins "today" (YYYY-MM-DD) so evaluation results don't drift.
+    return os.getenv("AGENT_TODAY") or date.today().isoformat()
